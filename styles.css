@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-gray: #aaa;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: 'Inter', sans-serif;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*************************************************************************
+                                  Header
+*************************************************************************/
+
+header {
+  grid-column: 1 / -1;
+  height: 25vh;
+  width: 100%;
+  background-color: #0E0E0E;
+  position: relative;
+}
+
+.header-img {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('./images/movie-posters.png') center no-repeat;
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
+.title {
+  grid-column: 2 / 3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.title a {
+  font-size: 1.6rem;
+  color: white;
+}
+
+/*************************************************************************
+                          Form input & button
+*************************************************************************/
+
+form {
+  grid-column: 2 / 3;
+  width: 100%;
+  position: absolute;
+  top: 23%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#searchbar {
+  height: 4rem;
+  width: 90%;
+}
+
+#search-button {
+  height: 4rem;
+  width: 10%;
+}
+
+/*************************************************************************
+                            Search Results
+*************************************************************************/
