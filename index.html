@@ -20,15 +20,16 @@
       </div>
     </header>
 
-    <form>
-      <input id="searchbar" placeholder="Search for a movie" />
+    <form id="movie-search-form">
+      <input type="search" id="searchbar" placeholder="Search for a movie" />
       <button id="search-button">Search</button>
     </form>
 
     <div id="search-results" class="results">
-      
+      <h3 class="results-empty-msg">Start exploring</h3>
     </div>
 
+    <script src="functionality.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

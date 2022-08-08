@@ -25,7 +25,9 @@ h1 {
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: #DFDDDD;
+  margin-top: 10rem;
 }
 
 a {
@@ -79,9 +81,9 @@ header {
 form {
   grid-column: 2 / 3;
   width: 100%;
-  position: absolute;
-  top: 23%;
-  width: 100%;
+  margin: -5% 0;
+  z-index: 100;
+  
   display: flex;
   align-items: center;
 }
@@ -89,13 +91,114 @@ form {
 #searchbar {
   height: 4rem;
   width: 90%;
+  padding: 1rem 3.3rem;
+  border-radius: 6px 0 0 6px;
+  /* add the search icon */
+  background: url("./images/Icon.png") no-repeat 1rem center;
+  background-color: white;
+}
+
+#searchbar:focus {
+  outline: none;
 }
 
 #search-button {
   height: 4rem;
   width: 10%;
+  border-radius: 0 6px 6px 0;
 }
 
 /*************************************************************************
                             Search Results
 *************************************************************************/
+
+.results {
+  grid-column: 2 / 3;
+  background: url("./images/Icon-film.png") no-repeat center;
+  height: 75vh;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie {
+  grid-column: 2 / 3;
+  height: 25vh;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.movie-poster {
+  height: 90%;
+  margin-right: 2rem;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.star-icon {
+  width: 4.5rem;
+}
+
+.movie-data-div {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.movie-data {
+  display: inline;
+  margin-right: 2rem;
+}
+
+#add-to-watchlist-btn {
+  color: black;
+  cursor: pointer;
+}
+
+.movie-desc {
+  color: #6B7280;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+/*************************************************************************
+                                Watchlist
+*************************************************************************/
+
+
+
+.results-msg {
+  margin: 13.5rem 0 1rem;
+}
+
+#add-movies-link {
+  font-size: 2rem;
+  color: black;
+  background: url("./images/Icon-plus.png") no-repeat left;
+  padding: .5rem 3rem;
+}
+
+/* #add-movies-link::before {
+  background: url("./images/Icon-plus.png") no-repeat left;
+} */
+
+.star-icon {
+  margin: 0 2rem 0 4rem;
+}
+
+#remove-from-watchlist-btn {
+  color: red;
+  cursor: pointer;
+}
+
+#remove-from-watchlist-btn::before {
+  background: url("./images/Icon-plus.png") no-repeat center;
+}
