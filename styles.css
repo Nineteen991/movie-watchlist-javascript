@@ -115,12 +115,12 @@ form {
 .results {
   grid-column: 2 / 3;
   background: url("./images/Icon-film.png") no-repeat center;
-  height: 75vh;
+  /* height: 73vh; */
   list-style: none;
+  margin-top: 3%;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 

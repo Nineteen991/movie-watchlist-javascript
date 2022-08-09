@@ -3,6 +3,7 @@
 const searchForm = document.getElementById('movie-search-form')
 const searchBar = document.getElementById('searchbar')
 const searchResults = document.getElementById('search-results')
+const emptyMsg = document.getElementById('results-empty-msg')
 let movieData
 
 // get movie data from OMDb api
@@ -10,8 +11,12 @@ const getMovie = async (movie) => {
     const res = await fetch(`http://www.omdbapi.com/?apikey=b1eb06c0&t=${movie}`)
     movieData = await res.json()
     // only render if a movie is returned from the api
-    if (movieData) {
+    if (movieData.Response !== 'False') {
         renderMovies(movieData)
+    } else if (movieData.Response === 'False') {
+        emptyMsg.innerHTML = 'Movie not found'
+    } else {
+        throw new Error('ya broke the movie fetch')
     }
 }
 

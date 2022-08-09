@@ -14,16 +14,19 @@ const getSavedMovies = () => {
 // get saved movies
 const movies = getSavedMovies()
 
+// remove duplicate movies saved to the watchlist
+const removeDuplicates = (array, key) => {
+    const check = new Set()
+    return array.filter(obj => !check.has(obj[key]) && check.add(obj[key]))
+}
+
 // save movies to watchlist
-const saveMovieToWatchlist = movieData => {
-    localStorage.setItem('movies', JSON.stringify(movies))
+const saveMovieToWatchlist = movies => {
+    const moviesWithNoDuplicates = removeDuplicates(movies, 'imdbID')
+    localStorage.setItem('movies', JSON.stringify(moviesWithNoDuplicates))
 }
 
-// delete all saved movies
-const deleteAllMovies = () => {
-    movies = []
-}
-
+// delete a movie from the watchlist
 const deleteMovie = id => {
     const movieToDelete = movies.findIndex(movie => movie.imdbID === id)
     movies.splice(movieToDelete, 1)

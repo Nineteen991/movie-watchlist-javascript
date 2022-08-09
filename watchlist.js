@@ -20,7 +20,7 @@ const renderWatchlist = movies => {
     } else if (movies.length > 0) {
         // clear the watchlist before rendering
         watchlist.innerHTML = ''
-
+        
         movies.map(movie => {
             const movieLi = document.createElement('li')
             const img = new Image()
