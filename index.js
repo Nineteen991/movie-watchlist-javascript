@@ -9,7 +9,10 @@ let movieData
 const getMovie = async (movie) => {
     const res = await fetch(`http://www.omdbapi.com/?apikey=b1eb06c0&t=${movie}`)
     movieData = await res.json()
-    renderMovies(movieData)
+    // only render if a movie is returned from the api
+    if (movieData) {
+        renderMovies(movieData)
+    }
 }
 
 // on submit send input data to OMDb api

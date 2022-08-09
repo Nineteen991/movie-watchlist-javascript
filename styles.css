@@ -186,10 +186,6 @@ form {
   padding: .5rem 3rem;
 }
 
-/* #add-movies-link::before {
-  background: url("./images/Icon-plus.png") no-repeat left;
-} */
-
 .star-icon {
   margin: 0 2rem 0 4rem;
 }
